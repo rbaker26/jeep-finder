@@ -2,7 +2,7 @@
 import scrapy
 
 class ToScrapeCSSSpider(scrapy.Spider):
-    name = "toscrape-css"
+    name = "jeep_scrape-css"
     start_urls = [
         'https://www.truecar.com/used-cars-for-sale/listings/jeep/location-ladera-ranch-ca/',
     ]
@@ -19,7 +19,7 @@ class ToScrapeCSSSpider(scrapy.Spider):
             #create a dictionary to store the scraped info
             scraped_info = {
                 'year' : item[0][0:4],
-                'car' : item[0][4:],
+                'car' : item[0][9:],
                 'trim' : item[1],
                 'price': item[2],
                 #'vehicle_info' : item[2],
